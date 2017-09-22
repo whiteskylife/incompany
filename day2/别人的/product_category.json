@@ -1,0 +1,32 @@
+{
+	"Automative & Industrial": [{
+		"Automotive": [
+			{"Name":"Tesala","Price":8200000}
+		],
+		"Industrial": [
+			{"Name":"Bike","Price":600}
+		]
+	}],
+	"Electronics & Computers": [{
+		"Electronics": [
+			{"Name":"iphone","Price":5888},
+			{"Name":"XiaoMi2","Price":900}
+		],
+		"Computers": [
+			{"Name":"MacAir","Price":9000},
+			{"Name":"MacPro","Price":13200}
+		]
+	}],
+	"Leisure": [{
+		"Clothes": [
+			{"Name":"Polo-T-Shirt","Price":200},
+			{"Name":"Muji Clothes","Price":150},
+			{"Name":"Red T-Shirt","Price":100},
+			{"Name":"Blue T-Shirt","Price":100},
+			{"Name":"White T-Shirt","Price":100}
+		],
+		"Books": [
+			{"Name":"Harry Potter IV","Price":90}
+		]
+	}]
+}
