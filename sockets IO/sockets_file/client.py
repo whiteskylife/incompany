@@ -13,12 +13,13 @@ ret_str = str(ret_bytes, encoding='utf-8')
 print(ret_str)
 
 # 发送当前文件大小
-size = os.stat('demo.mp4').st_size          # 计算文件大小的方法：os.stat(filename).st_size
+size = os.stat('demo.jpg').st_size          # 计算文件大小的方法：os.stat(filename).st_size
 obj.sendall(bytes(str(size), encoding='utf-8'))
 
 # 发送文件
-# with open('demo.mp4', 'rb') as f:
-#     for line in f:
-#         obj.sendall(line)
+with open('demo.jpg', 'rb') as f:
+    for line in f:
+        obj.sendall(line)
 
 obj.close()
+
