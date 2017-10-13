@@ -14,7 +14,7 @@ print(ret_str)
 
 # 发送当前文件大小
 size = os.stat('demo.jpg').st_size          # 计算文件大小的方法：os.stat(filename).st_size
-obj.sendall(bytes(str(size), encoding='utf-8'))
+obj.sendall(bytes(str(size), encoding='utf-8'))     # sendall 发送二进制
 
 # 发送文件
 with open('demo.jpg', 'rb') as f:
