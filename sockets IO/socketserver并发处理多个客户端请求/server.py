@@ -23,7 +23,9 @@ while True:
 
 class MyServer(socketserver.BaseRequestHandler):
 
-    def handle(self):
+    def handle(self):        # 必须叫这个方法名称，ThreadingTCPServer内写死了要调这个方法
+        # self 封装了属性如下，可以生成多个服务端响应请求
+        # self.request(客户端请求), self.client_address（客户端地址）,self.servers（服务器对象）
         conn = self.request
         conn.sendall(bytes('welcome login whiskys python world', encoding='utf-8'))
         while True:
