@@ -5,6 +5,3 @@
 # and a
 
 
-# fixing bug 1019
-
-# after fix bug
