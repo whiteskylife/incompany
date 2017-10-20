@@ -1,0 +1,13 @@
+[section1] # 节点
+k1 = v1    # 值
+k2:v2       # 值
+
+[section2] # 节点
+k1 = v1    # 值
+
+[test_ansible]
+node1 = 192.168.2.3
+ansible_ssh_port = 22
+ansible_ssh_user = gxy_ansible
+ansible_su_pass = 123456
+汉字 = 123

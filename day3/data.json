@@ -1,0 +1,13 @@
+{
+  "a":[
+    1,
+    2.0,
+    3,
+    4
+  ],
+  "b":[
+    "character string",
+    "byte string"
+  ],
+  "c":"abc"
+}{"c": "abc", "b": ["character string", "byte string"], "a": [1, 2.0, 3, 4]}

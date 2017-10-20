@@ -1,0 +1,57 @@
+global
+        log 127.0.0.1 local2
+        daemon
+        maxconn 256
+        log 127.0.0.1 local2 info
+defaults
+        log global
+        mode http
+        timeout connect 5000ms
+        timeout client 50000ms
+        timeout server 50000ms
+        option  dontlognull
+
+listen stats :8888
+        stats enable
+        stats uri       /admin
+        stats auth      admin:1234
+
+frontend oldboy.org
+        bind 0.0.0.0:80
+        option httplog
+        option httpclose
+        option  forwardfor
+        log global
+        acl www hdr_reg(host) -i www.oldboy.org
+        use_backend www.oldboy.org if www
+
+backend www.oldboy.org
+        server 100.1.27.9 100.1.27.9 weight 20 maxconn 666
+        server 100.1.27.9 100.1.27.9 weight 20 maxconn 666
+
+backend www.whisky.com
+        server 11.1.7.9 100.1.7.9 weight 20 maxconn 3000
+        server 11.1.7.19 100.1.7.19 weight 20 maxconn 3000
+        server 11.1.7.29 100.1.7.29 weight 20 maxconn 3000
+
+backend www.docker.com
+        server 10.1.5.134:80 cookie 1 check inter 1500 rise 3 fall 3 weight 1
+        server 10.1.6.118:80 cookie 2 check inter 1500 rise 3 fall 3 weight 2
+backend www.baidu.com
+	 server 192.168.2.255 weight 90 maxconn 21
+
+backend www.qq.com
+		 server 192.156.12.22 weight 29 maxconn 91
+backend www.google.com
+		 server 110.110.110.110 weight 70 maxconn 32
+backend www.it.com
+		 server 122 weight 21 maxconn 21
+
+backend www.163.com
+		 server 129.168.7.21 weight 12 maxconn 21
+
+backend test.oldboy.org
+ 		server 10.1.7.19 weight 2110 maxconn 30
+ 		server 110.1.7.19 weight 2110 maxconn 30
+ 		server 1110.1.7.19 weight 2110 maxconn 30
+ 		server 11110.1.7.19 weight 2110 maxconn 30
