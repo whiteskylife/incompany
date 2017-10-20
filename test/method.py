@@ -18,5 +18,4 @@
 # dog2 = Animal('北北')
 # myPrint(dog2)
 
-# test 1019
 
